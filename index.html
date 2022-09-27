@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cash Register Manager</h1>
+    <div class="header-Message">Enter the bill amount and cash given and know minimum number of notes to return.</div>
+    <h2 class="heading">Enter Bill amount :</h2>
+    <input type="text" class="input" id="bill-amount">
+    <h2 class="heading">Enter Cash Given :</h2>
+    <input type="text" class="input" id="cash-given">
+    <br>
+    <button id="check-button">Check</button>
+
+    <p id="error-message"></p>
+    <table class="change-table">
+        <h2 class="heading">Return Change</h2>
+        <!-- <tr>
+          <th>No of Notes</th>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <th>Denominations</th>
+          <td>2000</td>
+          <td>500</td>
+          <td>100</td>
+          <td>20</td>
+          <td>10</td>
+          <td>5</td>
+          <td>1</td>
+        </tr> -->
+
+        <!-- changing orientation -->
+        <tr>
+          <th>Denominations</th>
+          <th>No of Notes</th>
+        </tr>
+        <tr>
+          <td>₹2000</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹500</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹200</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹100</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹50</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹20</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹10</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹5</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹2</td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <td>₹1</td>
+          <td class="no-of-notes"></td>
+        </tr>
+      </table>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
