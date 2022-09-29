@@ -18,7 +18,7 @@ checkButton.addEventListener("click", function validateBillAndCashAmount() {
       showMessage("Do you wanna wash plates?");
     }
   } else {
-    showMessage("Invalid Bill Amount");
+    showMessage("Invalid Data Entred");
   }
 });
 
