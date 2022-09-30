@@ -1,1 +1,8 @@
-# Neogcamp-mark10
+# Cash Register
+
+
+A cash register manager which helps the user by telling how can he/she return the change to the customer with minimum number of notes. In this project we have used:
+
+1. HTML
+2. CSS
+3. Javascript
