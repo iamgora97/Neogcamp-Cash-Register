@@ -1,49 +1,47 @@
 const billAmount = document.querySelector("#bill-amount");
-const cashGiven = document.querySelector("#cash-given");
-const checkButton = document.querySelector("#check-button");
-const message = document.querySelector("#error-message");
-const noOfNotes = document.querySelectorAll(".no-of-notes");
+const givenAmount = document.querySelector("#cash-given");
+const checkbtn = document.querySelector("#check-button")
+const displayResult = document.querySelector("#result")
+const numberOfNotes = document.querySelectorAll(".no-of-notes");
+const availableNotes = [2000 , 500 , 100 , 50 , 20 , 10 , 5 , 1 ]
+//console.log(givenAmount.value)
 
-const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-checkButton.addEventListener("click", function validateBillAndCashAmount() {
-  hideMessage();
-  if (billAmount.value > 0) {
-    // 12
-    if (cashGiven.value >= billAmount.value) {
-      // 2022> 12 => true
-      const amountToBeReturned = cashGiven.value - billAmount.value; // 2022 - 12 = 2010
-      calculateChange(amountToBeReturned);
-    } else {
-      showMessage("Do you wanna wash plates?");
+function checkValidity(){
+    hideMessage();
+    if ( billAmount.value > 0 )
+    {
+        if (   Number(givenAmount.value)  > Number(billAmount.value)){
+            
+            const calculateChange = givenAmount.value - billAmount.value;
+            result("you have change left with "+calculateChange +" Rs...")
+            displayAmount(calculateChange);
+        }else if(givenAmount.value === billAmount.value){
+            result("You have no exchange left")
+            
+        }
+        else{
+            result("Do you wanna wash plates? Or\n  GIVE SOME CASH")
+        }
+    }else{
+        result("give correct amount")
     }
-  } else {
-    showMessage("Invalid Data Entred");
-  }
-});
-
-function calculateChange(amountToBeReturned) {
-  // 2010
-  // go over all the available
-  for (let i = 0; i < availableNotes.length; i++) {
-    // no of notes need for the denomination
-    const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
-    // 2010 / 2000 = 1 || 10 / 500 = 0
-
-    // amount left after calculating the number of notes needed
-    amountToBeReturned = amountToBeReturned % availableNotes[i];
-    // 2010 % 2000 = 10 || 10 % 500 = 10
-
-    // updating the no of notes in the table for the current amount
-    noOfNotes[i].innerText = numberOfNotes;
-  }
 }
 
-function hideMessage() {
-  message.style.display = "none";
+function result(msg)
+{
+    displayResult.style.display="block";
+    displayResult.innerText = msg;
 }
-
-function showMessage(msg) {
-  message.style.display = "block";
-  message.innerText = msg;
+function hideMessage(){
+    displayResult.style.display = "none";
 }
+function displayAmount(calculateChange){
+    for(let i = 0 ; i < availableNotes.length; i++)
+    {
+        const noOfNotes = Math.trunc(calculateChange / availableNotes[i]);
+        calculateChange %= availableNotes[i];
+        numberOfNotes[i].innerText = noOfNotes;
+    }
+}
+checkbtn.addEventListener("click",checkValidity);
